@@ -7,8 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "server": "cd server && npm install && npm run dev",
-    "server:start": "cd server && npm start",
     "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {

@@ -9,8 +9,15 @@ import { Toaster } from 'react-hot-toast';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'MRH Store - Your Item Marketplace',
+  title: 'MRH Store',
   description: 'Discover and manage amazing items in our marketplace',
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/apple-icon.svg',
+  },
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
