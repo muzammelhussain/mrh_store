@@ -6,7 +6,11 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: 'MRH Store',
@@ -26,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={inter.variable}>
+      <body className={`${inter.className} antialiased`}>
         <AuthProvider>
           <div className="min-h-screen flex flex-col">
             <Navbar />
@@ -36,7 +40,20 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
-          <Toaster position="top-right" />
+          <Toaster 
+            position="top-right"
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: '#1e293b',
+                color: '#f8fafc',
+                border: '1px solid #334155',
+                borderRadius: '12px',
+                fontSize: '14px',
+                fontWeight: '500',
+              },
+            }}
+          />
         </AuthProvider>
       </body>
     </html>
